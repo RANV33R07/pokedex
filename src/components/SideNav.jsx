@@ -3,7 +3,7 @@ import {first151Pokemon,getFullPokedexNumber} from "../utils"
 
 export default function SideNav(props){
      
-    const {handleToggleMenu,selectedPokemon, setSeletedPokemon,showSideMenu} = props
+    const {handleCloseMenu,handleToggleMenu,selectedPokemon, setSeletedPokemon,showSideMenu} = props
     const [currCards, setCurrCards] = useState(first151Pokemon);
     const [input, setInput] = useState("");
 
@@ -21,12 +21,12 @@ export default function SideNav(props){
     }, [input])
 
     return (
-        <nav className={" "+ (!showSideMenu?"":" open")}>
-            <div className={"header" + + (!showSideMenu? " open":"")}>
-                <button onClick={handleToggleMenu} className="open-nav-button">
-                <i className="fa-solid fa-arrow-left"></i>
+        <nav className={' ' + (!showSideMenu ? " open" : '')}>
+            <div className={"header " + (!showSideMenu ? " open" : '')} >
+                <button onClick={handleCloseMenu} className="open-nav-button">
+                    <i className="fa-solid fa-arrow-left-long"></i>
                 </button>
-                <h1>Pokédex</h1>
+                <h1 className="text-gradient">Pokédex</h1>
             </div>
 
             <input 
